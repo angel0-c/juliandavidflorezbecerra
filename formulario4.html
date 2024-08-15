@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doble y Triple de un Número</title>
+    <style>
+        body { font-family: Arial, sans-serif;margin: 20px;}
+        label {display: block;margin-top: 10px;}
+        input {margin-bottom: 10px;padding: 5px;}
+        button { padding: 10px 15px;background-color: #4CAF50;color: white;border: none;cursor: pointer;}
+        button:hover {background-color: #45a049;}
+        .resultado, .error { margin-top: 20px;font-weight: bold;color: black;}
+        .error {color: red;}
+    </style>
+</head>
+<body>
+    <h1>Cálculo del Doble y Triple</h1>
+    <form action="/formulario4" method="POST">
+        <label for="numero">Ingrese un número:</label>
+        <input type="number" name="numero" required>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if resultado %}
+        {% if resultado is string %}
+            <div class="error">{{ resultado }}</div>
+        {% else %}
+            <div class="resultado">El doble de {{ numero }} es {{ resultado.doble }}<br>
+            El triple de {{ numero }} es {{ resultado.triple }}</div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
+
+

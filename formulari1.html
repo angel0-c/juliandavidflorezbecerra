@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrar Mayor y Menor</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin: 20px;}
+        label { display: block;margin-top: 10px;}
+        input { margin-bottom: 10px;padding: 5px;}
+        button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer;}
+        button:hover {background-color: #45a049;}
+        .error {color: red;margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Encuentra el Mayor y Menor</h1>
+    <form method="POST" action="/formulari1">
+        <label for="a">Número A:</label>
+        <input type="number" name="a" required>
+
+        <label for="b">Número B:</label>
+        <input type="number" name="b" required>
+
+        <label for="c">Número C:</label>
+        <input type="number" name="c" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if mayor is not none and menor is not none %}
+        <div class="result">
+            <h2>Resultados:</h2>
+            <p>El número mayor es: <strong>{{ mayor }}</strong></p>
+            <p>El número menor es: <strong>{{ menor }}</strong></p>
+        </div>
+    {% endif %}
+</body>
+</html>

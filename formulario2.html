@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Notas</title>
+    <style>
+        body {font-family: Arial, sans-serif;margin: 20px;}
+        label { display: block;margin-top: 10px;}
+        input {margin-bottom: 10px; padding: 5px;}
+        button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049;}
+        .resultado, .error { margin-top: 20px; font-weight: bold;color: red; }
+        .resultado {color: black; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Notas</h1>
+    <form action="/formulario2" method="POST">
+        <label for="nota">Ingrese su nota:</label>
+        <input type="number" name="nota" required>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if error_message %}
+        <div class="error">{{ error_message }}</div>
+    {% elif mensaje is not none %}
+        <div class="resultado">Su calificación es: {{ mensaje }}</div>
+    {% endif %}
+</body>
+</html>

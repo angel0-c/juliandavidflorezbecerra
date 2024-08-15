@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Camisas</title>
+    <style>
+        body {font-family: Arial, sans-serif;margin: 20px;}
+        label {display: block;margin-top: 10px;}
+        input { margin-bottom: 10px;padding: 5px;}
+        button { padding: 10px 15px; background-color: #4CAF50;color: white;border: none;cursor: pointer;}
+        button:hover {background-color: #45a049;}
+        .resultado { margin-top: 20px;font-weight: bold;}
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Camisas</h1>
+    <form action="/formulario3" method="POST">
+        <label for="total1">precio de camisa 1:</label>
+        <input type="number" name="total1" required>
+        <label for="total2">precio de camisa 2:</label>
+        <input type="number" name="total2" required>
+        <label for="total3">precio de camisa 3:</label>
+        <input type="number" name="total3" required>
+        <label for="total4">precio de camisa 4:</label>
+        <input type="number" name="total4" required>
+        <label for="total5">precio de camisa 5:</label>
+        <input type="number" name="total5" required>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if pesos is not none %}
+        <div class="resultado">
+            Total en Pesos: {{ pesos }}
+        </div>
+    {% endif %}
+</body>
+</html>
