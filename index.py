@@ -11,12 +11,12 @@ def inicio():
 @app.route('/formulario')
 def formulario():
     return render_template('formulario.html')
-
+#aqui estubo angelo curiel
 @app.route('/respuesta', methods=['POST'])
 def respueta():
     if request.method =='POST':
-        n1 = int(request.form['n1'])
-        n2 = int(request.form['n2'])
+        numero1 = int(request.form['numero1'])
+        numero2 = int(request.form['numero2'])
         suma = n1 + n2
         return render_template('formulario.html', res=suma)
     
